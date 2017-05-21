@@ -30,4 +30,4 @@ filetype plugin on
 
  * 在`call vundle#begin()`和`call vundle#end()`之间添加要安装的插件
  * 启动vim并运行命令`:PlugingInstall`
- * 命令行安装插件命令: `vim +PluginInstall +qall`
+ * 终端安装插件命令: `vim +PluginInstall +qall`

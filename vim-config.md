@@ -2,7 +2,7 @@
 
 ## Vundle
 
-[Vundle](https://github.com/VundleVim/Vundle.vim)是一个vim插件管理器。
+[Vundle](https://github.com/VundleVim/Vundle.vim)是一个vim插件管理器。（如果没有特别说明，下文中插件都使用Vundle安装。）
 
 ### Vundle安装
 
@@ -52,7 +52,7 @@ Plugin 'scrooloose/nerdtree'
 
 ```vim
 " F2打开或关闭NERDTree
-nnoremap <silent> <f2> :NERDTreeToggle<CR>
+nnoremap <silent> <F2> :NERDTreeToggle<CR>
 " 需要忽略的文件
 let NERDTreeIgnore=['\.o']
 " 只有NERDTree一个窗口还开着的时候，退出vim
@@ -76,4 +76,73 @@ gi: split一个新窗口打开文件，但不跳到该窗口
 s:  vsplit一个新窗口打开文件，并跳到该窗口
 gs: vsplit一个新窗口打开文件，但不跳到该窗口
 A:  最大化NERDTree窗口或恢复大小
+```
+
+## MiniBufExpl
+
+[MiniBufExpl](https://github.com/fholgado/minibufexpl.vim) buffer管理工具，能显示每个buffer对应是第几个buffer。
+
+### MiniBufExpl安装
+
+```vim
+Plugin 'fholgado/minibufexpl.vim'
+```
+
+### MiniBufExpl配置
+
+```vim
+" 使minibuffer显示在窗口最上方
+let g:miniBufExplBRSplit = 0
+```
+
+### MiniBufExpl使用
+
+没有MiniBufExpl，下面vim命令也能使用，但不知道buffer对应的num，很难用`b<num>`来切换buffer
+
+```vim
+:bn 打开后一个buffer
+:bp 打开前一个buffer
+:b<num> 打开第num个buffer
+```
+
+## Tagbar
+
+[Tagbar](https://github.com/majutsushi/tagbar)能显示当前文件的tags，方便查看代码结构，如类，函数，全局变量等。
+
+### Tagbar安装
+
+```vim
+Plugin 'majutsushi/tagbar'
+```
+
+### Tagbar配置
+
+```vim
+" F3 打开或关闭tagbar
+nnoremap <silent> <F3> :TagbarToggle<CR>
+```
+
+## Taglist
+
+[Taglist](https://github.com/vim-scripts/taglist.vim) 类似于tagbar的插件，基本能被tagbar取代，尝试后未使用。
+
+### Taglist安装
+
+```vim
+Plugin 'taglist.vim'
+```
+
+### Taglist配置
+
+```vim
+" F3打开或关闭taglist
+nnoremap <silent> <F3> :TlistToggle<CR>
+" 只展示一个文件的taglist
+let Tlist_Show_One_File=1
+" 当taglist是最后以个窗口时自动退出
+let Tlist_Exit_OnlyWindow=1
+" 在右边显示taglist窗口
+let Tlist_Use_Right_Window=1
+" tag按名字排序
+let Tlist_Sort_Type='name'
 ```

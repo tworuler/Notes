@@ -146,3 +146,49 @@ let Tlist_Use_Right_Window=1
 " tag按名字排序
 let Tlist_Sort_Type='name'
 ```
+
+## indentLine
+
+[indentLine](https://github.com/Yggdroot/indentLine)显示代码缩进。
+
+注意：indentLine默认会改变"concealcursor" 和 "conceallevel"，会一些符号隐藏掉，如json里面的引号，和markdown里面的一些符号。目前json和markdown里面的符号隐藏问题由下文其他插件解决。
+
+### indentLine安装
+
+```vim
+Plugin 'Yggdroot/indentLine'
+```
+
+### indentLine配置
+
+```vim
+" Vim 设置显示符号颜色
+let g:indentLine_color_term = 239
+" GVim 设置显示符号颜色
+let g:indentLine_color_gui = '#A4E57E'
+" 设置显示符号， ¦, ┆, 或 │
+let g:indentLine_char = '¦'
+" 默认关闭indentLine
+let g:indentLine_enabled = 0
+```
+
+## Indent Guides
+
+[Indent Guides](https://github.com/nathanaelkane/vim-indent-guides) 显示代码缩进的另一个插件。未使用，indentLine更好看。
+
+### Indent Guides安装
+
+```vim
+Plugin 'nathanaelkane/vim-indent-guides'
+```
+
+### Indent Guides配置
+
+```vim
+" 默认打开状态
+let g:indent_guides_enable_on_vim_startup=1
+" 从第二层开始可视化显示缩进
+let g:indent_guides_start_level=2
+" 设置色块宽度
+let g:indent_guides_guide_size=1
+```

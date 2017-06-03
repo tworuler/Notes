@@ -36,13 +36,54 @@ filetype plugin on
 
 [YouCompleteMe](https://github.com/Valloric/YouCompleteMe)是一个非常优秀的代码补全插件，但安装过程较复杂，需要vim版本较高，目前未使用。
 
+## Syntastic
+
+[Syntastic](https://github.com/vim-syntastic/syntastic) 语法检查插件，安装后启动vim会比较慢，目前未使用。
+
+## Auto Pairs
+
+[Auto Pair](https://github.com/jiangmiao/auto-pairs) 括号自动补全插件，目前未使用。
+
+### Auto Pairs安装
+
+```vim
+Plugin 'Auto-Pairs'
+```
+
+## NERD Commenter
+[NERD Commenter](https://github.com/scrooloose/nerdcommenter) 快速注释代码插件。
+
+### NERD Commenter安装
+
+```vim
+Plugin 'scrooloose/nerdcommenter'
+```
+
+### NERD Commenter配置
+
+```vim
+"在注释符后面增加一个空格
+let g:NERDSpaceDelims = 1
+"修改注释格式，python默认为'# '会额外增加一个空格
+let g:NERDCustomDelimiters = { 'python': { 'left': '#' } }
+"使注释符左对齐
+let g:NERDDefaultAlign = 'left'
+```
+
+### NERD Commenter使用
+
+```
+\c<space>: 注释或取消注释选中行和当前行
+\cc: 注释选中行或选中文本
+\cu: 取消注释选中行和当前行
+\cs: 注释选中行或选中文本，使用漂亮的格式
+```
+
 ## NERDTree
 
 [NERDTree](https://github.com/scrooloose/nerdtree)树形目录插件，能用来浏览文件系统，打开文件。
 
 ### NERDTree安装
-
-使用Vundle安装
 
 ```vim
 Plugin 'scrooloose/nerdtree'
@@ -76,6 +117,36 @@ gi: split一个新窗口打开文件，但不跳到该窗口
 s:  vsplit一个新窗口打开文件，并跳到该窗口
 gs: vsplit一个新窗口打开文件，但不跳到该窗口
 A:  最大化NERDTree窗口或恢复大小
+```
+
+## CtrlP
+[CtrlP](https://github.com/ctrlpvim/ctrlp.vim) 文件搜索插件。
+
+### CtrlP安装
+```vim
+Plugin 'ctrlpvim/ctrlp.vim'
+```
+
+### CtrlP配置
+
+```vim
+" 修改ctrlp开启快捷键和命令
+let g:ctrlp_map='<c-p>'
+let g:ctrlp_cmp='CtrlP'
+```
+
+### CtrlP使用
+
+CtrlP查找文件主要模式有file, buffer, mru(most recently used file)。
+
+CtrlP开启后快捷键：
+
+```
+<c-f>, <c-b>: 切换模式
+<c-j>, <c-k> or <方向键>: 在ctrlp列表中上下选择文件
+<c-t>: 新建tab打开文件
+<c-v>: 竖直分屏打开文件
+<c-x>: 水平分屏打开文件
 ```
 
 ## MiniBufExpl
@@ -192,3 +263,71 @@ let g:indent_guides_start_level=2
 " 设置色块宽度
 let g:indent_guides_guide_size=1
 ```
+
+## SimpylFold
+
+[SimpylFold](https://github.com/tmhedberg/SimpylFold) 适合python的代码折叠插件，目前未使用。
+
+### SimpylFold安装
+
+```vim
+Plugin 'tmhedberg/SimpylFold'
+```
+
+## vim-json
+
+[vim-json](https://github.com/elzr/vim-json)
+
+## vim-markdown
+
+[vim-markdown](https://github.com/plasticboy/vim-markdown)
+
+## vim-airline
+
+[vim-airlien](https://github.com/vim-airline/vim-airline) 状态栏插件，能使vim看起来更美观。
+
+### vim-airline安装
+
+```vim
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+```
+
+### vim-airline配置
+
+```vim
+"只有一个tab打开的时候，tab栏里显示所有buffer
+let g:airline#extensions#tabline#enabled = 1
+```
+
+### vim-airline使用
+
+```
+:AirlienTheme <theme> "改变vim-airline主题
+```
+
+## vim-powerline
+
+[vim-powerline](https://github.com/Lokaltog/vim-powerline) 功能类似于vim-airline，目前未使用。
+
+### vim-powerline安装
+
+```vim
+Plugin 'Lokaltog/vim-powerline'
+```
+
+## vim主题
+
+ * [monokai (cursoexia版本)](https://github.com/crusoexia/vim-monokai) 当前使用主题
+ * [monokai (sickill版本)](https://github.com/sickill/vim-monokai)
+ * [solarized](https://github.com/altercation/vim-colors-solarized)
+
+### 主题安装
+
+```vim
+"Plugin 'sickill/vim-monokai'
+Plugin 'crusoexia/vim-monokai'
+Plugin 'tomasr/molokai'
+Plugin 'altercation/vim-colors-solarized'
+```
+

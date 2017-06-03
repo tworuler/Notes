@@ -62,11 +62,11 @@ Plugin 'scrooloose/nerdcommenter'
 ### NERD Commenter配置
 
 ```vim
-"在注释符后面增加一个空格
+" 在注释符后面增加一个空格
 let g:NERDSpaceDelims = 1
-"修改注释格式，python默认为'# '会额外增加一个空格
+" 修改注释格式，python默认为'# '会额外增加一个空格
 let g:NERDCustomDelimiters = { 'python': { 'left': '#' } }
-"使注释符左对齐
+" 使注释符左对齐
 let g:NERDDefaultAlign = 'left'
 ```
 
@@ -222,7 +222,7 @@ let Tlist_Sort_Type='name'
 
 [indentLine](https://github.com/Yggdroot/indentLine)显示代码缩进。
 
-注意：indentLine默认会改变"concealcursor" 和 "conceallevel"，会一些符号隐藏掉，如json里面的引号，和markdown里面的一些符号。目前json和markdown里面的符号隐藏问题由下文其他插件解决。
+注意：indentLine默认会改变`concealcursor`和`conceallevel`，会一些符号隐藏掉，如json里面的引号，和markdown里面的一些符号。目前json和markdown里面的符号隐藏问题由下文其他插件解决。
 
 ### indentLine安装
 
@@ -276,11 +276,38 @@ Plugin 'tmhedberg/SimpylFold'
 
 ## vim-json
 
-[vim-json](https://github.com/elzr/vim-json)
+[vim-json](https://github.com/elzr/vim-json) json插件，能优化json语法高亮，代码折叠，indentLine配置造成的引号隐藏问题。
+
+### vim-json安装
+
+```vim
+Plugin 'elzr/vim-json'
+```
+
+### vim-json配置
+
+```vim
+" 不隐藏代码，无视conceallevel的设置
+let g:vim_json_syntax_conceal = 0
+```
 
 ## vim-markdown
 
-[vim-markdown](https://github.com/plasticboy/vim-markdown)
+[vim-markdown](https://github.com/plasticboy/vim-markdown) markdown插件，能优化markdown语法高亮，indentLine配置造成的部分代码隐藏问题。
+
+### vim-markdown安装
+
+```vim
+Plugin 'godlygeek/tabular'
+Plugin 'plasticboy/vim-markdown'
+```
+
+### vim-markdown配置
+
+```vim
+" 不隐藏代码，无视conceallevel的设置
+let g:vim_markdown_conceal = 0
+```
 
 ## vim-airline
 
@@ -296,7 +323,7 @@ Plugin 'vim-airline/vim-airline-themes'
 ### vim-airline配置
 
 ```vim
-"只有一个tab打开的时候，tab栏里显示所有buffer
+" 只有一个tab打开的时候，tab栏里显示所有buffer
 let g:airline#extensions#tabline#enabled = 1
 ```
 
@@ -320,14 +347,25 @@ Plugin 'Lokaltog/vim-powerline'
 
  * [monokai (cursoexia版本)](https://github.com/crusoexia/vim-monokai) 当前使用主题
  * [monokai (sickill版本)](https://github.com/sickill/vim-monokai)
+ * [molokai](https://github.com/tomasr/molokai)
  * [solarized](https://github.com/altercation/vim-colors-solarized)
 
-### 主题安装
+### vim主题安装
 
 ```vim
 "Plugin 'sickill/vim-monokai'
 Plugin 'crusoexia/vim-monokai'
 Plugin 'tomasr/molokai'
 Plugin 'altercation/vim-colors-solarized'
+```
+
+### vim主题配置
+
+```vim
+" 使用monokai作为默认主题
+if $TERM == 'screen-256color' || $TERM == 'xterm-256color'
+    set t_Co=256
+    colorscheme monokai
+endif
 ```
 
